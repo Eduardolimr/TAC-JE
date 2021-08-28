@@ -1,6 +1,5 @@
-bin/obj/Game.o: src/Game.cpp include/Game.h include/sdl_log.h \
- include/log.h include/sdl2include.h include/SDL/SDL.h \
- include/SDL/SDL_main.h include/SDL/SDL_stdinc.h include/SDL/SDL_config.h \
+bin/obj/main.o: src/main.cpp include/SDL/SDL.h include/SDL/SDL_main.h \
+ include/SDL/SDL_stdinc.h include/SDL/SDL_config.h \
  include/SDL/SDL_platform.h include/SDL/begin_code.h \
  include/SDL/close_code.h include/SDL/SDL_assert.h \
  include/SDL/SDL_atomic.h include/SDL/SDL_audio.h include/SDL/SDL_error.h \
@@ -21,12 +20,9 @@ bin/obj/Game.o: src/Game.cpp include/Game.h include/sdl_log.h \
  include/SDL/SDL_power.h include/SDL/SDL_render.h include/SDL/SDL_shape.h \
  include/SDL/SDL_system.h include/SDL/SDL_timer.h \
  include/SDL/SDL_version.h include/SDL/SDL_locale.h \
- include/SDL/SDL_misc.h include/SDL/SDL_image.h include/SDL/SDL.h \
+ include/SDL/SDL_misc.h include/Game.h include/sdl_log.h include/log.h \
+ include/sdl2include.h include/SDL/SDL_image.h include/SDL/SDL.h \
  include/SDL/SDL_ttf.h include/SDL/SDL_mixer.h
-include/Game.h:
-include/sdl_log.h:
-include/log.h:
-include/sdl2include.h:
 include/SDL/SDL.h:
 include/SDL/SDL_main.h:
 include/SDL/SDL_stdinc.h:
@@ -75,6 +71,10 @@ include/SDL/SDL_timer.h:
 include/SDL/SDL_version.h:
 include/SDL/SDL_locale.h:
 include/SDL/SDL_misc.h:
+include/Game.h:
+include/sdl_log.h:
+include/log.h:
+include/sdl2include.h:
 include/SDL/SDL_image.h:
 include/SDL/SDL.h:
 include/SDL/SDL_ttf.h:

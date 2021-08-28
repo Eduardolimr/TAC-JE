@@ -184,7 +184,7 @@ bool Game::load_media() {
 	if(g_menu_background == NULL ) {
 		success = false;
 	}
-    g_music = Mix_LoadMUS("bensound_scifi.mp3");
+    g_music = Mix_LoadMUS("bensound-scifi.ogg");
 	if(g_music == NULL)
 	{
 		printf( "Failed to load beat music! SDL_mixer Error: %s\n", Mix_GetError() );
