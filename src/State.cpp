@@ -3,25 +3,27 @@
 
 #include "SDL_include.h"
 #include "State.h"
+#include <string>
 
-
-State::State(){
+State::State():bg(), music(){
     quitRequested = false;
-    bg = new Sprite();
-    music = new Music();
 }
 
 
 void State::LoadAssets(){
-    bg.Open('assets/img/ocean.png');
-    music.Open('assets/audio/stateState.ogg');
+    std::string str1, str2;
+    str1 = "../assets/img/ocean.png";
+    str2 = "../assets/audio/stateState.ogg";
 
-    bg.SetClip(0, 0, 1024, 600);
+    bg.Open(str1.c_str());
+    music.Open(str2.c_str());
+
+    bg.SetClip(0, 0, 600, 1024);
     music.Play(-1);
 }
 
 
-void State::Update(){
+void State::Update(float dt){
     if(SDL_QuitRequested()){
         quitRequested = true;
     }
@@ -29,7 +31,7 @@ void State::Update(){
 
 
 void State::Render(){
-
+    bg.Render(0,0);
 }
 
 

@@ -8,6 +8,7 @@
 
 using namespace engine;
 
+Game* Game::instance = nullptr;
 
 Game& Game::GetInstance() {
     if(instance != nullptr){
@@ -38,6 +39,7 @@ Game::Game(){
                               0);
 
     renderer = SDL_CreateRenderer(window, -1, SDL_RENDERER_ACCELERATED);
+    state = new State();
 }
 
 
@@ -67,6 +69,7 @@ Game::Game(std::string title, int width, int height){
                               0);
 
     renderer = SDL_CreateRenderer(window, -1, SDL_RENDERER_ACCELERATED);
+    state = new State();
 }
 
 
@@ -95,12 +98,12 @@ SDL_Renderer* Game::GetRenderer(){
 
 
 void Game::run(){
+    state->LoadAssets();
     while(!state->QuitRequested()){
-        state->Update();
+        state->Update(0.0);
         state->Render();
 
         SDL_RenderPresent(renderer);
         SDL_Delay(33);
-
     }
 }

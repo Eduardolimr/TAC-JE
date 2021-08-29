@@ -6,7 +6,7 @@ public:
     State();
     bool QuitRequested();
     void LoadAssets();
-    void Update();
+    void Update(float dt);
     void Render();
 private:
     Sprite bg;

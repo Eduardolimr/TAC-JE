@@ -6,8 +6,8 @@
 
 namespace engine{
     static const std::string DEFAULT_GAME_NAME = "Eduardo Lima Ribeiro 16/0049458";
-    static const int DEFAULT_HEIGHT(1024);
-    static const int DEFAULT_WIDTH(600);
+    static const int DEFAULT_HEIGHT(600);
+    static const int DEFAULT_WIDTH(1024);
 
     class Game{
     public:
