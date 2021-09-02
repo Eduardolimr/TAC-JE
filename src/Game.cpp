@@ -30,7 +30,8 @@ Game::Game(){
     if(Mix_Init(MIX_INIT_OGG | MIX_INIT_MP3)){
         SDL_GetError();
     }
-
+    Mix_OpenAudio(MIX_DEFAULT_FREQUENCY,MIX_DEFAULT_FORMAT,MIX_DEFAULT_CHANNELS,1024);
+    Mix_AllocateChannels(32);
     window = SDL_CreateWindow(engine::DEFAULT_GAME_NAME.c_str(), 
                               SDL_WINDOWPOS_CENTERED, 
                               SDL_WINDOWPOS_CENTERED, 
