@@ -12,14 +12,13 @@ State::State():bg(), music(){
 
 void State::LoadAssets(){
     std::string str1, str2;
-    str1 = "../assets/img/ocean.png";
-    str2 = "../assets/audio/stateState.ogg";
+    str1 = ".././assets/img/ocean.jpg";
+    str2 = ".././assets/audio/stageState.ogg";
 
-    bg.Open(str1.c_str());
-    music.Open(str2.c_str());
-
-    bg.SetClip(0, 0, 600, 1024);
-    music.Play(-1);
+    bg.Open(str1);
+    bg.Render(0,0);
+    music.Open(str2);
+    music.Play();
 }
 
 

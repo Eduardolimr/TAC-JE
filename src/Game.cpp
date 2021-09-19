@@ -51,16 +51,18 @@ Game::Game(std::string title, int width, int height){
     instance = this;
 
     if(SDL_Init(SDL_INIT_VIDEO | SDL_INIT_AUDIO | SDL_INIT_TIMER)){
-        SDL_GetError();
+        printf("Couldn't init %s\n", SDL_GetError());
     }
 
     if(!IMG_Init(IMG_INIT_JPG | IMG_INIT_PNG | IMG_INIT_TIF)){
-        SDL_GetError();
+        printf("Couldn't init %s\n", SDL_GetError());
     }
 
     if(Mix_Init(MIX_INIT_OGG | MIX_INIT_MP3)){
-        SDL_GetError();
+        printf("Couldn't init %s\n", SDL_GetError());
     }
+    Mix_OpenAudio(MIX_DEFAULT_FREQUENCY,MIX_DEFAULT_FORMAT,MIX_DEFAULT_CHANNELS,1024);
+    Mix_AllocateChannels(32);
 
     window = SDL_CreateWindow(title.c_str(), 
                               SDL_WINDOWPOS_CENTERED, 
@@ -69,7 +71,9 @@ Game::Game(std::string title, int width, int height){
                               height, 
                               0);
 
-    renderer = SDL_CreateRenderer(window, -1, SDL_RENDERER_ACCELERATED);
+    renderer = SDL_CreateRenderer(window, 
+                                  -1, 
+                                  SDL_RENDERER_ACCELERATED);
     state = new State();
 }
 
