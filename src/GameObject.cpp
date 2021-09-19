@@ -34,7 +34,7 @@ GameObject::Render(){
 
 
 GameObject::IsDead(){
-    return this.isDead;
+    return isDead;
 }
 
 

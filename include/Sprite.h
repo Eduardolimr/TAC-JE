@@ -5,18 +5,21 @@
 #include <string>
 
 
-class Sprite{
+class Sprite: public Component{
 public:
-    Sprite();
-    Sprite(std::string file);
+    Sprite(GmaeObject& associated);
+    Sprite(GameObject& associated, std::string file);
     ~Sprite();
 
     void Open(std::string file);
     void SetClip(int x, int y, int w, int h);
-    void Render(int x, int y);
+    void Render();
     int GetWidth();
     int GetHeight();
+    void Update(float dt);
+    bool Is(std::string type);
     bool IsOpen();
+
 private:
     SDL_Texture * texture;
     int width;
